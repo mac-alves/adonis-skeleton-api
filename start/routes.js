@@ -17,5 +17,11 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+  return { powerApi: 'Welcome to Power API.' }
 })
+
+Route.group(() => {
+
+  Route.post('/session', 'SessionController.store')
+
+}).prefix('api/v1')
