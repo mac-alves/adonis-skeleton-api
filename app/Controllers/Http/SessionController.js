@@ -1,10 +1,8 @@
-'use strict'
-
 class SessionController {
-  async store({ request, auth }){
+  async store({ request, auth }) {
     const { email, password } = request.only([
       'email',
-      'password'
+      'password',
     ]);
 
     const { token } = await auth.attempt(email, password);
@@ -13,4 +11,4 @@ class SessionController {
   }
 }
 
-module.exports = SessionController
+module.exports = SessionController;

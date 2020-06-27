@@ -1,5 +1,3 @@
-'use strict'
-
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -14,16 +12,12 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use('Route');
 
-Route.get('/', () => {
-  return { powerApi: 'Welcome to Power API.' }
-})
+Route.get('/', () => ({ powerApi: 'Welcome to Power API.' }));
 
 Route.group(() => {
-
-  Route.post('/session', 'SessionController.store')
-  Route.post('/forgot', 'ForgotPasswordController.store')
-  Route.post('/reset', 'ResetPasswordController.store')
-
-}).prefix('api/v1')
+  Route.post('/session', 'SessionController.store');
+  Route.post('/forgot', 'ForgotPasswordController.store');
+  Route.post('/reset', 'ResetPasswordController.store');
+}).prefix('api/v1');
