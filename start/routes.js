@@ -17,7 +17,7 @@ const Route = use('Route');
 Route.get('/', () => ({ powerApi: 'Welcome to Power API.' }));
 
 Route.group(() => {
-  Route.post('/session', 'SessionController.store');
-  Route.post('/forgot', 'ForgotPasswordController.store');
-  Route.post('/reset', 'ResetPasswordController.store');
+  Route.post('/session', 'SessionController.store').validator('Session');
+  Route.post('/forgot', 'ForgotPasswordController.store').validator('Forgot');
+  Route.post('/reset', 'ResetPasswordController.store').validator('Reset');
 }).prefix('api/v1');
