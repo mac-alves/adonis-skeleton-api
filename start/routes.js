@@ -23,5 +23,7 @@ Route.get('/', () => {
 Route.group(() => {
 
   Route.post('/session', 'SessionController.store')
+  Route.post('/forgot', 'ForgotPasswordController.store')
+  Route.post('/reset', 'ResetPasswordController.store')
 
 }).prefix('api/v1')
