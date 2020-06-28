@@ -3,7 +3,7 @@ const Schema = use('Schema');
 
 class ClientSchema extends Schema {
   up() {
-    this.create('client', (table) => {
+    this.create('clients', (table) => {
       table.increments();
       table.string('identification').notNullable();
       table.string('cpf_cnpj').notNullable();
@@ -12,17 +12,17 @@ class ClientSchema extends Schema {
       table.integer('address_id')
         .notNullable()
         .references('id')
-        .inTable('address');
+        .inTable('adresses');
       table.integer('client_type_id')
         .notNullable()
         .references('id')
-        .inTable('client_type');
+        .inTable('client_types');
       table.timestamps();
     });
   }
 
   down() {
-    this.drop('client');
+    this.drop('clients');
   }
 }
 

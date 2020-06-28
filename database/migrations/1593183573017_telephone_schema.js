@@ -3,19 +3,20 @@ const Schema = use('Schema');
 
 class TelephoneSchema extends Schema {
   up() {
-    this.create('telephone', (table) => {
+    this.create('telephones', (table) => {
       table.increments('id');
       table.integer('telephone').notNullable();
       table.integer('client_id')
         .notNullable()
         .references('id')
-        .inTable('client');
+        .inTable('clients')
+        .onDelete('CASCADE');
       table.timestamps();
     });
   }
 
   down() {
-    this.drop('telephone');
+    this.drop('telephones');
   }
 }
 

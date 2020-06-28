@@ -170,7 +170,7 @@ module.exports = {
     | based on HTTP headers/query string.
     |
     */
-    locale: 'en',
+    locale: 'pt',
   },
 
   logger: {

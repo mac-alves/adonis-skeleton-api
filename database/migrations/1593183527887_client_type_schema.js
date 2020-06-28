@@ -3,7 +3,7 @@ const Schema = use('Schema');
 
 class ClientTypeSchema extends Schema {
   up() {
-    this.create('client_type', (table) => {
+    this.create('client_types', (table) => {
       table.increments('id');
       table.string('type').notNullable();
       table.timestamps();
@@ -11,7 +11,7 @@ class ClientTypeSchema extends Schema {
   }
 
   down() {
-    this.drop('client_type');
+    this.drop('client_types');
   }
 }
 

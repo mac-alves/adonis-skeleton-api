@@ -1,14 +1,13 @@
 const Antl = use('Antl');
 
-class Reset {
+class Destroy {
   get validateAll() {
     return true;
   }
 
   get rules() {
     return {
-      token: 'required',
-      password: 'required|confirmed',
+      password: 'required',
     };
   }
 
@@ -17,4 +16,4 @@ class Reset {
   }
 }
 
-module.exports = Reset;
+module.exports = Destroy;

@@ -1,13 +1,14 @@
 const Antl = use('Antl');
 
-class Reset {
+class Register {
   get validateAll() {
     return true;
   }
 
   get rules() {
     return {
-      token: 'required',
+      username: 'required',
+      email: 'email|required',
       password: 'required|confirmed',
     };
   }
@@ -17,4 +18,4 @@ class Reset {
   }
 }
 
-module.exports = Reset;
+module.exports = Register;

@@ -3,7 +3,7 @@ const Schema = use('Schema');
 
 class AddressSchema extends Schema {
   up() {
-    this.create('address', (table) => {
+    this.create('adresses', (table) => {
       table.increments('id');
       table.string('street').notNullable();
       table.string('number').notNullable();
@@ -17,7 +17,7 @@ class AddressSchema extends Schema {
   }
 
   down() {
-    this.drop('address');
+    this.drop('adresses');
   }
 }
 

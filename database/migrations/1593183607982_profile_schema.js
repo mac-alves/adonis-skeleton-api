@@ -9,11 +9,12 @@ class ProfileSchema extends Schema {
       table.integer('client_id')
         .notNullable()
         .references('id')
-        .inTable('client');
+        .inTable('clients')
+        .onDelete('CASCADE');
       table.integer('tile_type_id')
         .notNullable()
         .references('id')
-        .inTable('tile_type');
+        .inTable('tile_types');
       table.timestamps();
     });
   }

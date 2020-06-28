@@ -3,7 +3,7 @@ const Schema = use('Schema');
 
 class TileTypeSchema extends Schema {
   up() {
-    this.create('tile_type', (table) => {
+    this.create('tile_types', (table) => {
       table.increments('id');
       table.string('name').notNullable();
       table.timestamps();
@@ -11,7 +11,7 @@ class TileTypeSchema extends Schema {
   }
 
   down() {
-    this.drop('tile_type');
+    this.drop('tile_types');
   }
 }
 
